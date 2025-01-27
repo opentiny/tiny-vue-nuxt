@@ -43,7 +43,7 @@ jobs:
       - name: Run Build nuxt
         run: pnpm build
 
-      - name: Publish Icons
+      - name: Publish @opentiny/nuxt
         run: pnpm pub
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
