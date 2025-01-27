@@ -5,6 +5,7 @@
   "description": "tiny-vue module for Nuxt",
   "author": "",
   "license": "MIT",
+  "packageManager": "pnpm@9.14.2",
   "keywords": [
     "opentiny",
     "nuxt",
