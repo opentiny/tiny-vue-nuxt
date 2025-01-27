@@ -1,5 +1,5 @@
 {
-  "name": "@opentiny/tiny-vue-nuxt",
+  "name": "@opentiny/nuxt",
   "type": "module",
   "version": "1.0.6",
   "description": "tiny-vue module for Nuxt",
@@ -12,35 +12,39 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/module.d.ts",
-      "require": "./dist/module.cjs",
-      "import": "./dist/module.mjs"
+      "import": "./src/module.ts"
     },
     "./*": "./*"
   },
-  "main": "./dist/module.cjs",
-  "module": "./dist/module.mjs",
+  "module": "./src/module.ts",
   "files": [
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "exports": {
+      ".": {
+        "types": "./dist/module.d.ts",
+        "require": "./dist/module.cjs",
+        "import": "./dist/module.mjs"
+      },
+      "./*": "./*"
+    },
+    "main": "./dist/module.cjs",
+    "module": "./dist/module.mjs"
   },
   "scripts": {
     "build": "pnpm run dev:prepare && nuxt-module-build",
-    "dev": "nuxi dev playground",
+    "dev": "pnpm -F tiny-vue-nuxt-example dev",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
     "@nuxt/kit": "^3.12.3",
-    "unplugin-vue-components": "^0.26.0",
-    "vue": "~3.4.0"
+    "unplugin-vue-components": "^28.0.0",
+    "unplugin-auto-import": "^19.0.0"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.2.0",
     "@nuxt/module-builder": "^0.6.0",
-    "@nuxt/schema": "^3.12.3",
-    "less": "^4.2.0",
-    "nuxt": "^3.12.3"
+    "vite": "^6.0.0"
   }
 }

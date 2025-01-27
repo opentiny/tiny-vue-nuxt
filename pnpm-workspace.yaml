@@ -1,5 +1,5 @@
 packages:
-  - playground
+  - example
 
   # 统一版本，方便维护
 catalog:

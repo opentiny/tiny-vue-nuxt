@@ -1,18 +1,12 @@
 import { defineNuxtModule } from '@nuxt/kit'
-import AutoVite from 'unplugin-vue-components/vite'
-import AutoWebpack from 'unplugin-vue-components/webpack'
-
-const supportMap = {
-  'vite': AutoVite,
-  'webpack': AutoWebpack
-}
+import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import { kebabCase } from 'unplugin-vue-components'
 
 export const TinyVueResolver = (componentName) => {
   if (componentName.startsWith('Tiny') && !componentName.startsWith('TinyIcon')) {
-    return {
-      name: componentName.slice(4),
-      from: '@opentiny/vue'
-    }
+    const importName = `@opentiny/vue-${kebabCase(componentName.slice(4))}`
+    return importName
   }
 }
 
@@ -24,23 +18,14 @@ export default defineNuxtModule({
 
   setup(_options, nuxt) {
     nuxt.hook('vite:extendConfig', (config) => {
-      const autoVitePlugin = supportMap.vite
       config.plugins.push(
-        autoVitePlugin({
+        Components({
+          resolvers: [TinyVueResolver]
+        }),
+        AutoImport({
           resolvers: [TinyVueResolver]
         })
       )
-    })
-
-    nuxt.hook('webpack:config', (configs) => {
-      const autoWebpackPlugin = supportMap.webpack
-      configs.forEach((config) => {
-        config.plugins.push(
-          autoWebpackPlugin({
-            resolvers: [TinyVueResolver]
-          })
-        )
-      })
     })
   }
 })
