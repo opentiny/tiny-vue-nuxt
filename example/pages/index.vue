@@ -1,13 +1,22 @@
 <template>
-  <div>
-    <tiny-alert description="type 为默认值 info"></tiny-alert>
-    <h1>图标</h1>
-    <button @click="handleClick">点击</button>
+  <div class="index">
+    <div class="image">
+      <img style="width: 40px; margin-right: 10px" src="../public/favicon.png" />
+    </div>
+    <div class="title_nuxt">Nuxt</div>
   </div>
 </template>
 
-<script setup>
-const handleClick=()=> {
-  TinyModal.alert({ message: '成功提示框', status: 'success' })
+<script setup></script>
+
+<style>
+.index {
+  display: flex;
 }
-</script>
+.title_nuxt {
+  line-height: 32px;
+  font-size: 50px;
+  font-weight: 700;
+  color: rgb(0 220 130);
+}
+</style>
