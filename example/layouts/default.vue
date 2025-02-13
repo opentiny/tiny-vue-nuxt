@@ -11,7 +11,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import TinyTreeMenu from '@opentiny/vue-tree-menu'
 
 const treeData = ref([
   {
@@ -20,9 +19,7 @@ const treeData = ref([
     children: [
       { id: 101, label: 'Button 按钮', url: '/Button' },
       { id: 102, label: 'ButtonGroup 按钮组', url: 'ButtonGroup' },
-      { id: 103, label: 'Color 色彩', url: 'Color' },
       { id: 104, label: 'Container 容器布局', url: 'Container' },
-      { id: 105, label: 'Font 字体', url: 'Font' },
       { id: 106, label: 'Icon 图标', url: 'Icon' },
       { id: 107, label: 'Layout 栅格布局', url: 'Layout' },
       { id: 108, label: 'Link 链接', url: 'Link' },
@@ -37,12 +34,9 @@ const treeData = ref([
       { id: 202, label: 'Anchor 锚点', url: 'Anchor' },
       { id: 203, label: 'Breadcrumb 面包屑', url: 'Breadcrumb' },
       { id: 204, label: 'Dropdown 下拉菜单', url: 'Dropdown' },
-      { id: 205, label: 'FallMenu 瀑布菜单', url: 'FallMenu' },
-      { id: 206, label: 'LinkMenu 收藏夹菜单', url: 'LinkMenu' },
       { id: 207, label: 'NavMenu 导航菜单', url: 'NavMenu' },
       { id: 208, label: 'Pager 分页', url: 'Pager' },
       { id: 209, label: 'Steps 步骤条', url: 'Steps' },
-      { id: 210, label: 'ToggleMenu 收缩菜单', url: 'ToggleMenu' },
       { id: 211, label: 'TreeMenu 树形菜单', url: 'TreeMenu' }
     ]
   },
@@ -58,13 +52,11 @@ const treeData = ref([
       { id: 306, label: 'ColorSelectPanel 颜色选择面板', url: 'ColorSelectPanel' },
       { id: 307, label: 'DatePicker 日期选择器', url: 'DatePicker' },
       { id: 308, label: 'DropTimes 下拉时间', url: 'DropTimes' },
-      { id: 309, label: 'FileUpload 文件上传', url: 'FileUpload' },
       { id: 310, label: 'Form 表单', url: 'Form' },
       { id: 311, label: 'Input 输入框', url: 'Input' },
       { id: 312, label: 'IpAddress 树形菜单', url: 'IpAddress' },
       { id: 313, label: 'Numeric 数字输入框', url: 'Numeric' },
       { id: 314, label: 'PopEditor 弹出编辑', url: 'PopEditor' },
-      { id: 315, label: 'PopUpload 弹出上传', url: 'PopUpload' },
       { id: 316, label: 'Radio 单选框', url: 'Radio' },
       { id: 317, label: 'Rate 评分', url: 'Rate' },
       { id: 318, label: 'Search 搜索', url: 'Search' },
@@ -74,45 +66,6 @@ const treeData = ref([
       { id: 322, label: 'TimePicker 时间选择器', url: 'TimePicker' },
       { id: 323, label: 'TimeSelect 时间选择', url: 'TimeSelect' },
       { id: 324, label: 'Transfer 穿梭框', url: 'Transfer' }
-    ]
-  },
-  {
-    id: 400,
-    label: '表格',
-    children: [
-      { id: 401, label: '基本用法', url: 'GridBase' },
-      { id: 402, label: '序号列', url: 'GridSerialColumn' },
-      { id: 403, label: '操作列', url: 'GridOperationColumn' },
-      { id: 404, label: '空数据', url: 'GridEmpty' },
-      { id: 405, label: '数据源', url: 'GridDataSource' },
-      { id: 406, label: '大数据', url: 'GridLargeData' },
-      { id: 407, label: '分页', url: 'GridPager' },
-      { id: 408, label: '编辑', url: 'GridEdit' },
-      { id: 409, label: '工具栏', url: 'GridToolbar' },
-      { id: 410, label: '加载中', url: 'GridLoading' },
-      { id: 411, label: '宽高尺寸', url: 'GridSize' },
-      { id: 412, label: '外观设置', url: 'GridAppearanceSettings' },
-      { id: 413, label: '高亮', url: 'GridHighlight' },
-      { id: 414, label: '提示', url: 'GridTip' },
-      { id: 415, label: '对齐方式', url: 'GridAlign' },
-      { id: 416, label: '表头', url: 'GridHeader' },
-      { id: 417, label: '表尾', url: 'GridFooter' },
-      { id: 418, label: '自定义样式', url: 'GridCustomStyle' },
-      { id: 419, label: '排序', url: 'GridSort' },
-      { id: 420, label: '筛选', url: 'GridFilter' },
-      { id: 421, label: '冻结', url: 'GridFixed' },
-      { id: 422, label: '合并', url: 'GridSpan' },
-      { id: 423, label: '拖拽', url: 'GridDrag' },
-      { id: 424, label: '右键菜单', url: 'GridContextMenu' },
-      { id: 425, label: '编辑器', url: 'GridEditor' },
-      { id: 426, label: '表格校验', url: 'GridValidation' },
-      { id: 427, label: '事件', url: 'GridEvent' },
-      { id: 428, label: '插槽', url: 'GridSlot' },
-      { id: 429, label: '个性化', url: 'GridCustom' },
-      { id: 430, label: '树表', url: 'GridTreeTable' },
-      { id: 431, label: '展开行', url: 'GridExpand' },
-      { id: 432, label: '导入导出', url: 'GridIO' },
-      { id: 433, label: '鼠标和键盘配置', url: 'GridMouseKeyboard' }
     ]
   },
   {
@@ -135,7 +88,8 @@ const treeData = ref([
       { id: 514, label: 'TagGroup 标签组', url: 'TagGroup' },
       { id: 515, label: 'Timeline 时间线', url: 'Timeline' },
       { id: 516, label: 'Tree 树形控件', url: 'Tree' },
-      { id: 517, label: 'Wizard 流程图', url: 'Wizard' }
+      { id: 517, label: 'Wizard 流程图', url: 'Wizard' },
+      { id: 518, label: 'Grid 表格', url: 'Grid' }
     ]
   },
   {
@@ -153,20 +107,6 @@ const treeData = ref([
       { id: 609, label: 'Popover 气泡卡片', url: 'Popover' },
       { id: 610, label: 'Skeleton 骨架屏', url: 'Skeleton' },
       { id: 611, label: 'Tooltip 文字提示', url: 'Tooltip' }
-    ]
-  },
-  {
-    id: 700,
-    label: '图表',
-    children: [
-      { id: 701, label: 'LineChart 折线图', url: 'LineChart' },
-      { id: 702, label: 'BarChart 对话框', url: 'BarChart' },
-      { id: 703, label: 'PieChart 饼图', url: 'PieChart' },
-      { id: 704, label: 'RingChart 环图', url: 'RingChart' },
-      { id: 705, label: 'WaterfallChart 瀑布图', url: 'WaterfallChart' },
-      { id: 706, label: 'RadarChart 雷达图', url: 'RadarChart' },
-      { id: 707, label: 'TreeChart 树图', url: 'TreeChart' },
-      { id: 708, label: 'ProcessChart 进度图', url: 'ProcessChart' }
     ]
   },
   {
